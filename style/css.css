@@ -4,8 +4,8 @@ body {
 }
 .container {
     max-width: 1136px;
-    padding-left: 199px;
-    padding-right: 199px;
+    /* padding-left: 199px; */
+    /* padding-right: 199px; */
 }
 .header {
     max-width: 1600px;
@@ -26,10 +26,20 @@ body {
 .header-right {
     /* margin-left: 50%; */
     border: solid 3px red;
-    margin-left: 100px;
+    /* margin-left: 100px; */
+}
+.climash {
+    margin-top: 140px;
+    margin-bottom: 0;
+    padding-left: 100px;
+    padding-bottom: 23px;
+}
+.climash-house {
+    padding-left: 100px;
 }
 .nav {
     display: flex;
+    justify-content: space-around;
     list-style-type: none;
     gap: 47px;
 }
@@ -49,8 +59,8 @@ a {
     display: flex;
 }
 .flex2-left {
-    /* margin: 0; */
-    /* padding: 0; */
+    margin: 0;
+    padding: 0;
     
     border: solid 3px red;
 }

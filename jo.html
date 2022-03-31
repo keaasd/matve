@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title></head><body></body></html>
+    :root { --text-size-medium;}
+    .a {
+    font-size: var(--text-size-medium;)}
+    ==
+    шаблоны надо для начала работы
+    чекбокс
+    модалка
+    мобильное меню
+    аккордион 
+
+    ==
+    
+html {
+    font-size: 10px;
+    
+    @media (max-width: $r_mob_500) {
+    font-size: 8px;
+}
+      
+body {
+    font-size: 1.6rem;
+}
+      
+    = min
+@media (min-width: 1920px)
+@media (min-width: 1440px)
+@media (min-width: 960px)
+
+   = планшеты
+@media (min-width: 768px)
+
+   = смартфоны
+@media (min-width: 567px)
+@media (min-width: 480px)
+@media (min-width: 320px)
+
+    = max
+    @media (max-width: 1200px)
+@media (max-width: 960px)
+
+    = планшеты
+@media (max-width: 768px)
+    = смартфоны
+@media (max-width: 567px)
+@media (max-width: 480px)
+@media (max-width: 320px)
+
+
+
+h2 30px заголовок
+text 12px текст description
+section 60px между секциями
+logo 96*25px лого
+button  10px кнопка
+footer 10px copy копирайт футер
+=
+
+
+ховер линии
+.nav-items::after {
+    display: block;
+    position: relative;
+    content: "";
+    height: 1px;
+    width: 0;
+    background-color: #2B3541;
+    transition: width .2s ease-in-out, left .5s ease-in-out;
+    left: 0%;
+    bottom: -10px;
+  }
+  .nav-items:hover::after {
+    width: 100%;
+  }
+
+:nth-child(odd)even {...} нечетные
+
+<!-- мобильное меню 1-1 модалка -->
+
+<form action="#" class="modal block_center" >
+    <div class="modal__inner">
+        <button type="button" class="modal__close"></button>
+        <h2 class="modal__header">регистрация</h2>
+        <div class="modal__elements">
+            <div class="modal__item">
+                <input class="modal__input" type="text" placeholder="Ваше имя">
+            </div>
+            <div class="modal__item">
+                <input class="modal__input" type="email" placeholder="e-mail">
+            </div>
+            <div class="modal__item">
+                <input class="modal__input" type="tel" placeholder="номер телефона">
+            </div>
+        </div>
+        <button type="submit">Отправить</button>
+    </div>
+</form>
+<!-- мобильное меню 1-2 css -->
+.block_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.modal {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-x: auto;
+    z-index: 10;
+    padding: 3rem 0;
+    background: rgba(0, 0, 0, 0.8);
+    /* display: none; */
+}
+.modal__inner {
+    max-width: 663px;
+    width: 100%;
+    padding: 9rem 9.5rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.modal__close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: block;
+    height: 30px;
+    width: 30px;
+    background-image: url(../image/close.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+.modal__elements {
+    margin: 0 auto;
+    max-width: 44.4rem;
+}
+.noscroll {
+    overflow: hidden;
+    height: 100%;
+}
+// modal window
+const modalWindow = document.querySelector('.modal');
+const buttonModals = document.querySelectorAll('.modal__button');
+const modalClose = document.querySelector('.modal__close');
+const body = document.querySelector('body');
+
+// по клику по кнопке включаем меню 
+// убираем прокрутку с body 
+buttonModals.forEach((item) => {
+	item.addEventListener('click', () => {
+		modalWindow.style.display = 'flex';
+		body.classList.add('noscroll');
+	});
+});
+// закрываем модалку при нажатии вне
+// вернем прокрутку в body  
+modalWindow.addEventListener('click', (e) => {
+	const isModal = e.target.closest('.modal__inner');
+	if (!isModal) {
+	modalWindow.style.display = 'none';
+	body.classList.remove('noscroll');
+}
+});
+// по клику на крестик включаем скрол 
+modalClose.addEventListener('click', () => {
+	modalWindow.style.display = 'none';
+	body.classList.remove('noscroll');
+})
+
+https://nexoos.ru/moduli/podgruzka-tovarov-po-knopke.html
+
+
+
+еще Дани модалка 
+<button class="modal__btn _modal-open" data-modal-open="modal-1">
+    <img src="img/click.svg" alt="">
+    Click me!
+</button>
+
+<div class="_modal" data-modal="modal-1">
+    <div class="modal-bg">
+        <div class="modal-body">
+            <div class="modal-close"><img src="img/close.svg" alt=""></div>
+            <div class="modal-content modal-callback">
+                <div class="modal-callback__title">Перезвоните нам!</div>
+                <div class="modal-callback__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi qui culpa reprehenderit praesentium. Natus aliquid dolore excepturi quae illo, odit nihil magnam ut vel perferendis! Eos quaerat harum placeat debitis impedit, fugit modi error earum ab. Fuga, eius atque nesciunt incidunt, sint illum aspernatur voluptatem fugit tenetur, doloremque esse facere eos blanditiis. Quo nesciunt itaque tempore sequi recusandae aut. Maiores ex architecto dolorem? Non quidem accusantium, nesciunt consequuntur labore, debitis quas vel iusto nam dolor molestias assumenda fugit nostrum. Dolorem voluptatem vel incidunt autem laudantium molestias dolorum nemo amet porro exercitationem, praesentium asperiores ipsam placeat eveniet delectus eius ab quo impedit accusamus temporibus ullam aperiam minima. Impedit vel dignissimos nobis minima, aperiam provident, assumenda neque, odit magni deserunt sunt autem natus. Consectetur a quasi saepe voluptas, aperiam nemo suscipit illum harum ea modi est tempora? Veniam praesentium recusandae totam inventore architecto, ab cum ad reprehenderit impedit excepturi exercitationem, soluta, similique omnis molestias minus! Corporis tenetur suscipit odio facilis accusantium enim a recusandae necessitatibus reiciendis velit commodi adipisci harum officiis natus, ad debitis officia, quae praesentium deserunt odit eligendi minima. Autem nesciunt cumque magni provident labore blanditiis aliquid recusandae, dignissimos sapiente ducimus atque qui eius ad cupiditate molestiae explicabo. Ratione soluta recusandae expedita vel distinctio ea officia officiis sint voluptates eos! Reiciendis, nobis! Aut, minus dolore, atque soluta ullam velit sequi impedit aspernatur quidem tempora sunt, exercitationem laboriosam mollitia distinctio consequuntur quod vitae. Cupiditate hic deleniti non, rerum explicabo repellat recusandae dolores unde? Consequuntur necessitatibus libero delectus numquam inventore vitae assumenda modi veniam cum explicabo voluptate accusantium facere amet, magnam ad tempora eos maxime eveniet et, illum reiciendis laborum, porro perferendis. Voluptates illum dolorem error corrupti omnis enim quae officia quaerat deleniti odio ad, assumenda ullam laboriosam consectetur esse distinctio ex. Vel deleniti corporis eveniet reiciendis dolores sed explicabo, quibusdam vitae quae minus adipisci nulla itaque provident, minima pariatur repellat harum ad eligendi corrupti suscipit facere fugit nisi. Aut adipisci quidem dignissimos nihil quasi, nemo corrupti recusandae. Rerum molestias voluptates nemo, iusto pariatur, voluptatum similique repellendus architecto inventore amet doloremque non ad magnam aut porro totam hic ea exercitationem iure reiciendis! Quis molestiae odio tempore laborum. Aspernatur architecto suscipit iure asperiores quod vero quas? Laborum expedita recusandae saepe rem et incidunt neque harum adipisci, dolor minima animi ex alias suscipit doloribus, consequuntur laboriosam architecto nisi rerum hic ducimus cupiditate id dignissimos aspernatur pariatur! Autem iste cumque placeat, facilis soluta, recusandae iusto illo exercitationem rem at, illum nisi. Dolore sed expedita veritatis quod nemo cupiditate earum eum dicta sapiente reiciendis dolorem soluta perferendis facere quas, voluptate ipsum quidem minus in quo provident vel rem qui sequi odio. Nesciunt nam sed libero architecto deserunt voluptatibus ducimus voluptates nostrum, consequatur alias iusto aut doloribus iste suscipit velit cumque, autem dolores ex vero quae itaque. Suscipit eos placeat autem animi, fugiat veritatis possimus et necessitatibus delectus sit unde reiciendis eligendi veniam quidem sed numquam beatae voluptate non facere expedita tenetur! Dolor, nihil tempora, eius blanditiis pariatur magnam necessitatibus molestias mollitia repellat perferendis in quam. Ipsam.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+стили 
+  
+  ._locked {
+    overflow: hidden;
+  }
+  
+  .modal__btn {
+    border: none;
+    background-color: #f36262;
+    padding: 5px 10px;
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 5px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  ._modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    pointer-events: none;
+  }
+  
+  ._modal._active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+  
+  .modal-bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 20px;
+  }
+  
+  .modal-body {
+    padding: 24px;
+    background-color: #fff;
+    width: 700px;
+    margin: auto;
+    max-height: 90%;
+    overflow: auto;
+    border-radius: 16px;
+    position: relative;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+  }
+  
+const modalBtns = document.querySelectorAll('._modal-open');
+const modals = document.querySelectorAll('._modal');
+
+const body = document.body;
+
+function openModal(elem) {
+	elem.classList.add('_active');
+	body.classList.add('_locked')
+}
+
+function closeModal(e) {
+	if (e.target.classList.contains('modal-close') || e.target.closest('.modal-close') || e.target.classList.contains('modal-bg')) {
+		e.target.closest('._modal').classList.remove('_active');
+		body.classList.remove('_locked')
+	}
+}
+
+modalBtns.forEach(btn => {
+	btn.addEventListener('click', (e) => {
+		let data = e.target.dataset.modalOpen;
+
+		modals.forEach(modal => {
+			if (modal.dataset.modal == data || modal.dataset.modal == e.target.closest('._modal-open').dataset.modalOpen) {
+				openModal(modal)
+			}
+		})
+	})
+})
+
+modals.forEach(modal => {
+	modal.addEventListener('click', e => closeModal(e))
+})
+
+window.addEventListener('keydown', e => {
+	modals.forEach(modal => {
+		if (e.key === "Escape" && modal.classList.contains('_active')) {
+			modal.classList.remove('_active');
+			body.classList.remove('_locked');
+		}
+	})
+})

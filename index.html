@@ -14,12 +14,14 @@
 <body>
     <div class="header">
         <div class="header__bg">
-            <button class="burger-btn header-burger" onclick="openModal()" type="button"></button>    
-            <button class="button header_button modal__button" type="button" >Оставить&nbsp;заявку</button> 
+            <div class="header_box">
+                <button class="burger-btn header-burger" onclick="openModal()" type="button"></button>    
+                <button class="modal__btn _modal-open" data-modal-open="modal-1">Записаться</button>
+            </div>
         </div>
     </div>
     
-    <button class="modal__btn _modal-open" data-modal-open="modal-1">Записаться</button>
+    
     <!-- mobile menu  -->
     <div class="modal__mb" id="modal__mb">
         <div class="modal_window">

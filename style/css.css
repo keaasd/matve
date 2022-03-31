@@ -110,8 +110,60 @@ img {
     cursor: pointer;
   }
   /* модальное окно конец  */
+  /* бургер меню  */
+  .modal__mb {
+      position: fixed;
+      top: 0;
+      left: -3000px;
+      height: 100%;
+      width: 100%;
+      background-color: #fff;
+      background: rgba(0, 0, 0, 0.59);
+      z-index: 10;
+  }
+  .modal_window {
+      background-color: #252525;
+      padding: 113px 20px;      
+      height: 100%;
+      width: 100%;
+      max-width: 229px;
+  }
+  .header-modal-close {
+      background-image: url(../img/close.svg);
+      background-repeat: no-repeat;
+      background-color: transparent;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      height: 16.97px;
+      width: 16.97px;
+  }
+  
+  .burger-link::after {
+    display: block;
+    position: relative;
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color:  #A8A8A8;
+    transition: width .2s ease-in-out, left .5s ease-in-out;
+    left: 0%;
+    bottom: -10px;
+  }
+  .burger-link a {
+    color: #ffffff;
+    display: block;
+    margin-top: 20px;
+  }
+  
   .header {
       color: #ffffff;
+  }
+  .header_box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 1rem;
   }
   .header__bg {
       background-image: url(../img/header_bg.png);
@@ -122,6 +174,8 @@ img {
   }
   .modal__btn {
       background-color: transparent;
+      font-size: 16px;
+letter-spacing: -0.02em;
   }
   .burger-btn {
       background-image: url(../img/burger-menu.svg);
@@ -130,6 +184,6 @@ img {
       display: block;
       background-color: transparent;
       height: 16px;
-      width: auto;
+      width: 24px;
   }
 .header-burger {}

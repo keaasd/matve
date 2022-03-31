@@ -1,3 +1,10 @@
+function openModal() {
+    document.getElementById("modal__mb").style.left = "0px";
+}
+function closeModal() {
+    document.getElementById("modal__mb").style.left = "-3000px";
+}
+
 const modalBtns = document.querySelectorAll('._modal-open');
 const modals = document.querySelectorAll('._modal');
 

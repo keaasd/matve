@@ -5,29 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/font-avenir.css">
     <link rel="stylesheet" href="style/css.css">
-
-    <link rel="android-chrome-icon" type="image/png" sizes="192x192" href="img/favicon/android-chrome-192x192.png">    
-    <link rel="apple-touch-icon" sizes="180x180" href="image/favicon/apple-touch-icon.png">    
-    <link rel="android-chrome-icon" type="image/png" sizes="152x152" href="image/favicon/android-chrome-512x512.png">
-    <link rel="android-chrome-icon" type="image/png" sizes="150x150" href="image/favicon/mstile-150x150.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon/favicon-16x16.png">
-    <link rel="manifest" href="image/favicon/site.webmanifest">
-	<script defer src="js/index.js"></script>
+    <link rel="shortcut icon" href="img/favicon/ico.png" type="image/x-icon">
     <script defer src="js/modal.js"></script>
-    <script defer src="js/timer.js"></script>
-    <title>Document</title>
+    <title>Balmond</title>
 </head>
 <body>
-    <div class="header"></div>
+    <div class="header">
+        <div class="header__bg">
+            <button class="burger-btn header-burger" onclick="openModal()" type="button"></button>    
+            <button class="button header_button modal__button" type="button" >Оставить&nbsp;заявку</button> 
+        </div>
+    </div>
     
-    <button class="modal__btn _modal-open" data-modal-open="modal-1">
-        <img src="img/click.svg" alt="">
-        Click me!
-    </button>
-    
+    <button class="modal__btn _modal-open" data-modal-open="modal-1">Записаться</button>
+    <!-- mobile menu  -->
+    <div class="modal__mb" id="modal__mb">
+        <div class="modal_window">
+            <button onclick="closeModal()" class="header-modal-close"></button>
+            <div class="burger-link">
+                <a href="#special">О проекте</a>
+                <a href="#process">Предложения</a>
+                <a href="#comand">Контакты</a>
+                <a href="tel:+74959794772">8 (495) 979 47 72</a>
+            </div>
+        </div>
+    </div>
+
     <div class="_modal" data-modal="modal-1">
         <div class="modal-bg">
             <div class="modal-body">
